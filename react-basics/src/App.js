@@ -1,13 +1,13 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
+import './App.css';
+import MyName from './MyName';
 
 class App extends Component {
-  render() {
-    return (
-      <div>
-        <h1>안녕하세요 리액트</h1>
-      </div>
-    );
-  }
+    render() {
+        return (
+            <MyName/>
+        );
+    }
 }
 
 export default App;
