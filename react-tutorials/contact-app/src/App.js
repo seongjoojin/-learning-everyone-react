@@ -1,19 +1,33 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import PhoneForm from './components/PhoneForm';
 
 class App extends Component {
+  state = {
+    name:'',
+  }
+  handleChange = (e) => {
+    this.setState({
+      [e.target.name]:e.target.value
+    });
+  }
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
+      <from>
+        <input 
+          name="name"
+          placeholder="이름" 
+          onChange={this.handleChange} 
+          value={this.state.name} />
+        <input 
+          name="phone"
+          placeholder="전화번호" 
+          onChange={this.handleChange}
+          value={this.state.phone} />
+        <div>
+          {this.state.name}<br />
+          {this.state.phone}
+        </div>
+      </from>
     );
   }
 }
