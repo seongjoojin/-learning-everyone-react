@@ -1,35 +1,28 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import PhoneForm from './components/PhoneForm';
 
 class App extends Component {
-  state = {
-    name:'',
-  }
-  handleChange = (e) => {
-    this.setState({
-      [e.target.name]:e.target.value
-    });
-  }
-  render() {
-    return (
-      <from>
-        <input 
-          name="name"
-          placeholder="이름" 
-          onChange={this.handleChange} 
-          value={this.state.name} />
-        <input 
-          name="phone"
-          placeholder="전화번호" 
-          onChange={this.handleChange}
-          value={this.state.phone} />
-        <div>
-          {this.state.name}<br />
-          {this.state.phone}
-        </div>
-      </from>
-    );
-  }
+    id = 0;
+    state = {
+        information: [],
+    };
+    handleCreate = (data) => {
+        const { information } = this.state;
+        this.setState({
+            information:information.concat(Object.assign({},data,{
+                id: this.id++
+            }))
+        })
+    };
+
+    render() {
+        return (
+            <div>
+                <PhoneForm onCreate={this.handleCreate}/>
+                {JSON.stringify(this.state.information)}
+            </div>
+        );
+    }
 }
 
 export default App;
