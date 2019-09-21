@@ -1,0 +1,12 @@
+{
+  "groups": {
+    "default": {
+      "packages": [
+        "getsnapshotbeforeupdate/package.json",
+        "react-basics/package.json",
+        "react-tutorials/contact-app/package.json",
+        "reactanyone-lifecycle-api/package.json"
+      ]
+    }
+  }
+}
